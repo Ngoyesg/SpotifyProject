@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>consumerKey</key>
+	<string>35e535d3d7b146d187248b4fe1aa31b4</string>
+	<key>consumerSecret</key>
+	<string>6cd189fb10314ab296d7edc44d16bfcd</string>
+	<key>authorizeUrl</key>
+	<string>https://accounts.spotify.com/authorize</string>
+	<key>accessTokenUrl</key>
+	<string>https://accounts.spotify.com/api/token</string>
+	<key>responseType</key>
+	<string>code</string>
+</dict>
+</plist>

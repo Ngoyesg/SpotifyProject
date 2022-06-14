@@ -6,14 +6,17 @@
 //
 
 import UIKit
+import OAuthSwift
 
-class ViewController: UIViewController {
+class ViewController: OAuthViewController {
+    
+    var oauthswift: OAuth2Swift!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+   
     }
-
-
 }
 

@@ -7,15 +7,74 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B90FAB122854F9EE000632D1 /* PlistReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90FAB112854F9EE000632D1 /* PlistReaderTests.swift */; };
+		B91ECA382857F962006D9A07 /* SpotifyScopeParamsBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91ECA372857F962006D9A07 /* SpotifyScopeParamsBuilderTests.swift */; };
+		B91ECA3A2857FA2D006D9A07 /* FakePlistReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91ECA392857FA2D006D9A07 /* FakePlistReader.swift */; };
+		B91ECA3C2857FCC7006D9A07 /* OauthConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91ECA3B2857FCC7006D9A07 /* OauthConfiguratorTests.swift */; };
+		B91ECA3E2858EE62006D9A07 /* OauthManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91ECA3D2858EE62006D9A07 /* OauthManagerTests.swift */; };
+		B91ECA402858EF7D006D9A07 /* FakeOauth2Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91ECA3F2858EF7D006D9A07 /* FakeOauth2Swift.swift */; };
+		B91ECA4428591E0A006D9A07 /* AuthUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91ECA4328591E0A006D9A07 /* AuthUseCaseTests.swift */; };
+		B91ECA4628591F50006D9A07 /* FakeOauthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91ECA4528591F50006D9A07 /* FakeOauthManager.swift */; };
+		B91ECA48285921EE006D9A07 /* FakeKeychainSaveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91ECA47285921EE006D9A07 /* FakeKeychainSaveManager.swift */; };
+		B9405CF2284FE1600028C114 /* OAuthSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B9405CF1284FE1600028C114 /* OAuthSwift */; };
+		B9405CF6285009680028C114 /* PlistReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9405CF5285009680028C114 /* PlistReader.swift */; };
+		B94B41E32855016E00F83A31 /* SpotifyAuthParamsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94B41E22855016E00F83A31 /* SpotifyAuthParamsBuilder.swift */; };
+		B94B41E528579AEA00F83A31 /* SpotifyScopeParamsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94B41E428579AEA00F83A31 /* SpotifyScopeParamsBuilder.swift */; };
+		B963AC692857D95D0028C155 /* SpotifyScopeConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = B963AC682857D95D0028C155 /* SpotifyScopeConfig.plist */; };
+		B963AC6B2857D9D80028C155 /* SpotifyAuthParamsBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B963AC6A2857D9D80028C155 /* SpotifyAuthParamsBuilderTests.swift */; };
+		B967F3CB284E8873009A59A8 /* KeychainFetchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B967F3CA284E8873009A59A8 /* KeychainFetchManager.swift */; };
+		B967F3CD284E8889009A59A8 /* KeychainSaveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B967F3CC284E8889009A59A8 /* KeychainSaveManager.swift */; };
+		B967F3CF284E899A009A59A8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B967F3CE284E899A009A59A8 /* Constants.swift */; };
+		B967F3D1284E89C5009A59A8 /* OauthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B967F3D0284E89C5009A59A8 /* OauthManager.swift */; };
+		B967F3D3284EABE1009A59A8 /* AuthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B967F3D2284EABE1009A59A8 /* AuthUseCase.swift */; };
+		B967F3D5284EAF65009A59A8 /* SpotifyOauthConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = B967F3D4284EAF65009A59A8 /* SpotifyOauthConfig.plist */; };
+		B967F3D7284EB0E8009A59A8 /* OauthConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B967F3D6284EB0E8009A59A8 /* OauthConfigurator.swift */; };
+		B96F58C8285233AA0002FF2C /* WebClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96F58C7285233AA0002FF2C /* WebClient.swift */; };
+		B96F58CA285233D50002FF2C /* RestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96F58C9285233D50002FF2C /* RestClient.swift */; };
 		B983A45E2846B1E80016EE52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B983A45D2846B1E80016EE52 /* AppDelegate.swift */; };
 		B983A4602846B1E80016EE52 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B983A45F2846B1E80016EE52 /* SceneDelegate.swift */; };
 		B983A4622846B1E80016EE52 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B983A4612846B1E80016EE52 /* ViewController.swift */; };
 		B983A4652846B1E80016EE52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B983A4632846B1E80016EE52 /* Main.storyboard */; };
 		B983A4672846B1E80016EE52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B983A4662846B1E80016EE52 /* Assets.xcassets */; };
 		B983A46A2846B1E80016EE52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B983A4682846B1E80016EE52 /* LaunchScreen.storyboard */; };
+		B9EE6C04284976D800CD1FD3 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = B9EE6C03284976D800CD1FD3 /* KeychainAccess */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		B90FAB0C2854F46B000632D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B983A4522846B1E80016EE52 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B983A4592846B1E80016EE52;
+			remoteInfo = gndjf;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		B90FAB082854F46B000632D1 /* SpotifyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpotifyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B90FAB112854F9EE000632D1 /* PlistReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistReaderTests.swift; sourceTree = "<group>"; };
+		B91ECA372857F962006D9A07 /* SpotifyScopeParamsBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyScopeParamsBuilderTests.swift; sourceTree = "<group>"; };
+		B91ECA392857FA2D006D9A07 /* FakePlistReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakePlistReader.swift; sourceTree = "<group>"; };
+		B91ECA3B2857FCC7006D9A07 /* OauthConfiguratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OauthConfiguratorTests.swift; sourceTree = "<group>"; };
+		B91ECA3D2858EE62006D9A07 /* OauthManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OauthManagerTests.swift; sourceTree = "<group>"; };
+		B91ECA3F2858EF7D006D9A07 /* FakeOauth2Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeOauth2Swift.swift; sourceTree = "<group>"; };
+		B91ECA4328591E0A006D9A07 /* AuthUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUseCaseTests.swift; sourceTree = "<group>"; };
+		B91ECA4528591F50006D9A07 /* FakeOauthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeOauthManager.swift; sourceTree = "<group>"; };
+		B91ECA47285921EE006D9A07 /* FakeKeychainSaveManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeKeychainSaveManager.swift; sourceTree = "<group>"; };
+		B9405CF5285009680028C114 /* PlistReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistReader.swift; sourceTree = "<group>"; };
+		B94B41E22855016E00F83A31 /* SpotifyAuthParamsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAuthParamsBuilder.swift; sourceTree = "<group>"; };
+		B94B41E428579AEA00F83A31 /* SpotifyScopeParamsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyScopeParamsBuilder.swift; sourceTree = "<group>"; };
+		B963AC682857D95D0028C155 /* SpotifyScopeConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SpotifyScopeConfig.plist; sourceTree = "<group>"; };
+		B963AC6A2857D9D80028C155 /* SpotifyAuthParamsBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAuthParamsBuilderTests.swift; sourceTree = "<group>"; };
+		B967F3CA284E8873009A59A8 /* KeychainFetchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainFetchManager.swift; sourceTree = "<group>"; };
+		B967F3CC284E8889009A59A8 /* KeychainSaveManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainSaveManager.swift; sourceTree = "<group>"; };
+		B967F3CE284E899A009A59A8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B967F3D0284E89C5009A59A8 /* OauthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OauthManager.swift; sourceTree = "<group>"; };
+		B967F3D2284EABE1009A59A8 /* AuthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUseCase.swift; sourceTree = "<group>"; };
+		B967F3D4284EAF65009A59A8 /* SpotifyOauthConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SpotifyOauthConfig.plist; sourceTree = "<group>"; };
+		B967F3D6284EB0E8009A59A8 /* OauthConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OauthConfigurator.swift; sourceTree = "<group>"; };
+		B96F58C7285233AA0002FF2C /* WebClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebClient.swift; sourceTree = "<group>"; };
+		B96F58C9285233D50002FF2C /* RestClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestClient.swift; sourceTree = "<group>"; };
 		B983A45A2846B1E80016EE52 /* gndjf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gndjf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B983A45D2846B1E80016EE52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B983A45F2846B1E80016EE52 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,24 +83,71 @@
 		B983A4662846B1E80016EE52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B983A4692846B1E80016EE52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B983A46B2846B1E80016EE52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B983A4732846B3450016EE52 /* gndjf-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "gndjf-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		B983A4572846B1E80016EE52 /* Frameworks */ = {
+		B90FAB052854F46B000632D1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B983A4572846B1E80016EE52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9405CF2284FE1600028C114 /* OAuthSwift in Frameworks */,
+				B9EE6C04284976D800CD1FD3 /* KeychainAccess in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B90FAB092854F46B000632D1 /* SpotifyTests */ = {
+			isa = PBXGroup;
+			children = (
+				B91ECA392857FA2D006D9A07 /* FakePlistReader.swift */,
+				B91ECA3F2858EF7D006D9A07 /* FakeOauth2Swift.swift */,
+				B91ECA4528591F50006D9A07 /* FakeOauthManager.swift */,
+				B91ECA47285921EE006D9A07 /* FakeKeychainSaveManager.swift */,
+				B90FAB112854F9EE000632D1 /* PlistReaderTests.swift */,
+				B963AC6A2857D9D80028C155 /* SpotifyAuthParamsBuilderTests.swift */,
+				B91ECA372857F962006D9A07 /* SpotifyScopeParamsBuilderTests.swift */,
+				B91ECA3B2857FCC7006D9A07 /* OauthConfiguratorTests.swift */,
+				B91ECA3D2858EE62006D9A07 /* OauthManagerTests.swift */,
+				B91ECA4328591E0A006D9A07 /* AuthUseCaseTests.swift */,
+			);
+			path = SpotifyTests;
+			sourceTree = "<group>";
+		};
+		B963AC642857D32A0028C155 /* WebClient */ = {
+			isa = PBXGroup;
+			children = (
+				B96F58C7285233AA0002FF2C /* WebClient.swift */,
+				B96F58C9285233D50002FF2C /* RestClient.swift */,
+			);
+			path = WebClient;
+			sourceTree = "<group>";
+		};
+		B963AC652857D33B0028C155 /* KeychainManager */ = {
+			isa = PBXGroup;
+			children = (
+				B967F3CC284E8889009A59A8 /* KeychainSaveManager.swift */,
+				B967F3CA284E8873009A59A8 /* KeychainFetchManager.swift */,
+			);
+			path = KeychainManager;
+			sourceTree = "<group>";
+		};
 		B983A4512846B1E80016EE52 = {
 			isa = PBXGroup;
 			children = (
 				B983A45C2846B1E80016EE52 /* gndjf */,
+				B90FAB092854F46B000632D1 /* SpotifyTests */,
 				B983A45B2846B1E80016EE52 /* Products */,
+				B983A4732846B3450016EE52 /* gndjf-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -49,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				B983A45A2846B1E80016EE52 /* gndjf.app */,
+				B90FAB082854F46B000632D1 /* SpotifyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,13 +163,24 @@
 		B983A45C2846B1E80016EE52 /* gndjf */ = {
 			isa = PBXGroup;
 			children = (
+				B967F3CE284E899A009A59A8 /* Constants.swift */,
 				B983A45D2846B1E80016EE52 /* AppDelegate.swift */,
 				B983A45F2846B1E80016EE52 /* SceneDelegate.swift */,
 				B983A4612846B1E80016EE52 /* ViewController.swift */,
+				B963AC642857D32A0028C155 /* WebClient */,
+				B963AC652857D33B0028C155 /* KeychainManager */,
 				B983A4632846B1E80016EE52 /* Main.storyboard */,
 				B983A4662846B1E80016EE52 /* Assets.xcassets */,
 				B983A4682846B1E80016EE52 /* LaunchScreen.storyboard */,
 				B983A46B2846B1E80016EE52 /* Info.plist */,
+				B967F3D4284EAF65009A59A8 /* SpotifyOauthConfig.plist */,
+				B963AC682857D95D0028C155 /* SpotifyScopeConfig.plist */,
+				B967F3D2284EABE1009A59A8 /* AuthUseCase.swift */,
+				B967F3D0284E89C5009A59A8 /* OauthManager.swift */,
+				B967F3D6284EB0E8009A59A8 /* OauthConfigurator.swift */,
+				B94B41E22855016E00F83A31 /* SpotifyAuthParamsBuilder.swift */,
+				B94B41E428579AEA00F83A31 /* SpotifyScopeParamsBuilder.swift */,
+				B9405CF5285009680028C114 /* PlistReader.swift */,
 			);
 			path = gndjf;
 			sourceTree = "<group>";
@@ -70,6 +188,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		B90FAB072854F46B000632D1 /* SpotifyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B90FAB102854F46B000632D1 /* Build configuration list for PBXNativeTarget "SpotifyTests" */;
+			buildPhases = (
+				B90FAB042854F46B000632D1 /* Sources */,
+				B90FAB052854F46B000632D1 /* Frameworks */,
+				B90FAB062854F46B000632D1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B90FAB0D2854F46B000632D1 /* PBXTargetDependency */,
+			);
+			name = SpotifyTests;
+			productName = SpotifyTests;
+			productReference = B90FAB082854F46B000632D1 /* SpotifyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		B983A4592846B1E80016EE52 /* gndjf */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B983A46E2846B1E80016EE52 /* Build configuration list for PBXNativeTarget "gndjf" */;
@@ -83,6 +219,10 @@
 			dependencies = (
 			);
 			name = gndjf;
+			packageProductDependencies = (
+				B9EE6C03284976D800CD1FD3 /* KeychainAccess */,
+				B9405CF1284FE1600028C114 /* OAuthSwift */,
+			);
 			productName = gndjf;
 			productReference = B983A45A2846B1E80016EE52 /* gndjf.app */;
 			productType = "com.apple.product-type.application";
@@ -97,8 +237,13 @@
 				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
+					B90FAB072854F46B000632D1 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = B983A4592846B1E80016EE52;
+					};
 					B983A4592846B1E80016EE52 = {
 						CreatedOnToolsVersion = 13.4;
+						LastSwiftMigration = 1340;
 					};
 				};
 			};
@@ -111,22 +256,36 @@
 				Base,
 			);
 			mainGroup = B983A4512846B1E80016EE52;
+			packageReferences = (
+				B9EE6C02284976D800CD1FD3 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				B9405CF0284FE1600028C114 /* XCRemoteSwiftPackageReference "OAuthSwift" */,
+			);
 			productRefGroup = B983A45B2846B1E80016EE52 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				B983A4592846B1E80016EE52 /* gndjf */,
+				B90FAB072854F46B000632D1 /* SpotifyTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B90FAB062854F46B000632D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B983A4582846B1E80016EE52 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B983A46A2846B1E80016EE52 /* LaunchScreen.storyboard in Resources */,
+				B963AC692857D95D0028C155 /* SpotifyScopeConfig.plist in Resources */,
 				B983A4672846B1E80016EE52 /* Assets.xcassets in Resources */,
+				B967F3D5284EAF65009A59A8 /* SpotifyOauthConfig.plist in Resources */,
 				B983A4652846B1E80016EE52 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,17 +293,53 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B90FAB042854F46B000632D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B91ECA402858EF7D006D9A07 /* FakeOauth2Swift.swift in Sources */,
+				B963AC6B2857D9D80028C155 /* SpotifyAuthParamsBuilderTests.swift in Sources */,
+				B91ECA382857F962006D9A07 /* SpotifyScopeParamsBuilderTests.swift in Sources */,
+				B91ECA48285921EE006D9A07 /* FakeKeychainSaveManager.swift in Sources */,
+				B91ECA3A2857FA2D006D9A07 /* FakePlistReader.swift in Sources */,
+				B90FAB122854F9EE000632D1 /* PlistReaderTests.swift in Sources */,
+				B91ECA3C2857FCC7006D9A07 /* OauthConfiguratorTests.swift in Sources */,
+				B91ECA4628591F50006D9A07 /* FakeOauthManager.swift in Sources */,
+				B91ECA3E2858EE62006D9A07 /* OauthManagerTests.swift in Sources */,
+				B91ECA4428591E0A006D9A07 /* AuthUseCaseTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B983A4562846B1E80016EE52 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9405CF6285009680028C114 /* PlistReader.swift in Sources */,
 				B983A4622846B1E80016EE52 /* ViewController.swift in Sources */,
+				B967F3D7284EB0E8009A59A8 /* OauthConfigurator.swift in Sources */,
 				B983A45E2846B1E80016EE52 /* AppDelegate.swift in Sources */,
 				B983A4602846B1E80016EE52 /* SceneDelegate.swift in Sources */,
+				B967F3CD284E8889009A59A8 /* KeychainSaveManager.swift in Sources */,
+				B96F58C8285233AA0002FF2C /* WebClient.swift in Sources */,
+				B94B41E32855016E00F83A31 /* SpotifyAuthParamsBuilder.swift in Sources */,
+				B967F3D1284E89C5009A59A8 /* OauthManager.swift in Sources */,
+				B96F58CA285233D50002FF2C /* RestClient.swift in Sources */,
+				B967F3CB284E8873009A59A8 /* KeychainFetchManager.swift in Sources */,
+				B967F3CF284E899A009A59A8 /* Constants.swift in Sources */,
+				B967F3D3284EABE1009A59A8 /* AuthUseCase.swift in Sources */,
+				B94B41E528579AEA00F83A31 /* SpotifyScopeParamsBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B90FAB0D2854F46B000632D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B983A4592846B1E80016EE52 /* gndjf */;
+			targetProxy = B90FAB0C2854F46B000632D1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B983A4632846B1E80016EE52 /* Main.storyboard */ = {
@@ -166,6 +361,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		B90FAB0E2854F46B000632D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z24Z5QFBHM;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nataDev.SpotifyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gndjf.app/gndjf";
+			};
+			name = Debug;
+		};
+		B90FAB0F2854F46B000632D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z24Z5QFBHM;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nataDev.SpotifyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gndjf.app/gndjf";
+			};
+			name = Release;
+		};
 		B983A46C2846B1E80016EE52 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -216,7 +449,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +503,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -285,9 +518,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z24Z5QFBHM;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = gndjf/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -300,9 +538,12 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = nataDev.gndjf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "gndjf-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -313,9 +554,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z24Z5QFBHM;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = gndjf/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -328,9 +574,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = nataDev.gndjf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "gndjf-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -339,6 +587,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B90FAB102854F46B000632D1 /* Build configuration list for PBXNativeTarget "SpotifyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B90FAB0E2854F46B000632D1 /* Debug */,
+				B90FAB0F2854F46B000632D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B983A4552846B1E80016EE52 /* Build configuration list for PBXProject "gndjf" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -358,6 +615,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B9405CF0284FE1600028C114 /* XCRemoteSwiftPackageReference "OAuthSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OAuthSwift/OAuthSwift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		B9EE6C02284976D800CD1FD3 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B9405CF1284FE1600028C114 /* OAuthSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B9405CF0284FE1600028C114 /* XCRemoteSwiftPackageReference "OAuthSwift" */;
+			productName = OAuthSwift;
+		};
+		B9EE6C03284976D800CD1FD3 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B9EE6C02284976D800CD1FD3 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B983A4522846B1E80016EE52 /* Project object */;
 }
