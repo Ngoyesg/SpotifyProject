@@ -32,7 +32,6 @@
 		B983A45E2846B1E80016EE52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B983A45D2846B1E80016EE52 /* AppDelegate.swift */; };
 		B983A4602846B1E80016EE52 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B983A45F2846B1E80016EE52 /* SceneDelegate.swift */; };
 		B983A4622846B1E80016EE52 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B983A4612846B1E80016EE52 /* LandingViewController.swift */; };
-		B983A4652846B1E80016EE52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B983A4632846B1E80016EE52 /* Main.storyboard */; };
 		B983A4672846B1E80016EE52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B983A4662846B1E80016EE52 /* Assets.xcassets */; };
 		B983A46A2846B1E80016EE52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B983A4682846B1E80016EE52 /* LaunchScreen.storyboard */; };
 		B9B15F99285A307C00097FDF /* LandingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B15F98285A307C00097FDF /* LandingPresenter.swift */; };
@@ -41,7 +40,22 @@
 		B9B15F9F285A3AC100097FDF /* FakeLandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B15F9E285A3AC100097FDF /* FakeLandingViewController.swift */; };
 		B9B15FA1285A3FA900097FDF /* LandingPresenterBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B15FA0285A3FA900097FDF /* LandingPresenterBuilder.swift */; };
 		B9B15FA3285A400000097FDF /* LandingPresenterBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B15FA2285A400000097FDF /* LandingPresenterBuilderTests.swift */; };
+		B9B15FC1285D101C00097FDF /* ArtistDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B15FC0285D101C00097FDF /* ArtistDetailedViewController.swift */; };
+		B9B15FC3285D102F00097FDF /* ArtistLookUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B15FC2285D102F00097FDF /* ArtistLookUpViewController.swift */; };
+		B9B15FC5285D104200097FDF /* AlbumLookUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B15FC4285D104200097FDF /* AlbumLookUpViewController.swift */; };
+		B9B15FC7285D105E00097FDF /* ArtistLookUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B15FC6285D105E00097FDF /* ArtistLookUpPresenter.swift */; };
+		B9B15FC9285D107000097FDF /* ArtistDetailedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B15FC8285D107000097FDF /* ArtistDetailedPresenter.swift */; };
+		B9B15FCB285D108200097FDF /* AlbumLookUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B15FCA285D108200097FDF /* AlbumLookUpPresenter.swift */; };
+		B9B15FCD285D109E00097FDF /* ArtistLookUpPresenterBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B15FCC285D109E00097FDF /* ArtistLookUpPresenterBuilder.swift */; };
+		B9B15FCF285D10AB00097FDF /* ArtistDetailedPresenterBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B15FCE285D10AB00097FDF /* ArtistDetailedPresenterBuilder.swift */; };
+		B9B15FD1285D10BF00097FDF /* AlbumLookUpPresenterBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B15FD0285D10BF00097FDF /* AlbumLookUpPresenterBuilder.swift */; };
+		B9B15FDB285D138A00097FDF /* ArtistLookUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9B15FDA285D138A00097FDF /* ArtistLookUp.xib */; };
+		B9CADAD2286BA29A006E7151 /* AlbumLookUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9CADAD1286BA29A006E7151 /* AlbumLookUp.xib */; };
+		B9CADAD4286BA3A5006E7151 /* Landing.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9CADAD3286BA3A5006E7151 /* Landing.xib */; };
 		B9EE6C04284976D800CD1FD3 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = B9EE6C03284976D800CD1FD3 /* KeychainAccess */; };
+		B9F7E97B286227440098746D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = B9F7E97A286227440098746D /* FirebaseAnalytics */; };
+		B9F7E97D28622B140098746D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9F7E97C28622B140098746D /* GoogleService-Info.plist */; };
+		B9F7E9862863B2300098746D /* ArtistDetailed.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9F7E9852863B2300098746D /* ArtistDetailed.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,7 +95,6 @@
 		B983A45D2846B1E80016EE52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B983A45F2846B1E80016EE52 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B983A4612846B1E80016EE52 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
-		B983A4642846B1E80016EE52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B983A4662846B1E80016EE52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B983A4692846B1E80016EE52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B983A46B2846B1E80016EE52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -92,6 +105,20 @@
 		B9B15F9E285A3AC100097FDF /* FakeLandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeLandingViewController.swift; sourceTree = "<group>"; };
 		B9B15FA0285A3FA900097FDF /* LandingPresenterBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPresenterBuilder.swift; sourceTree = "<group>"; };
 		B9B15FA2285A400000097FDF /* LandingPresenterBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPresenterBuilderTests.swift; sourceTree = "<group>"; };
+		B9B15FC0285D101C00097FDF /* ArtistDetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailedViewController.swift; sourceTree = "<group>"; };
+		B9B15FC2285D102F00097FDF /* ArtistLookUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistLookUpViewController.swift; sourceTree = "<group>"; };
+		B9B15FC4285D104200097FDF /* AlbumLookUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumLookUpViewController.swift; sourceTree = "<group>"; };
+		B9B15FC6285D105E00097FDF /* ArtistLookUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistLookUpPresenter.swift; sourceTree = "<group>"; };
+		B9B15FC8285D107000097FDF /* ArtistDetailedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailedPresenter.swift; sourceTree = "<group>"; };
+		B9B15FCA285D108200097FDF /* AlbumLookUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumLookUpPresenter.swift; sourceTree = "<group>"; };
+		B9B15FCC285D109E00097FDF /* ArtistLookUpPresenterBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistLookUpPresenterBuilder.swift; sourceTree = "<group>"; };
+		B9B15FCE285D10AB00097FDF /* ArtistDetailedPresenterBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailedPresenterBuilder.swift; sourceTree = "<group>"; };
+		B9B15FD0285D10BF00097FDF /* AlbumLookUpPresenterBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumLookUpPresenterBuilder.swift; sourceTree = "<group>"; };
+		B9B15FDA285D138A00097FDF /* ArtistLookUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArtistLookUp.xib; sourceTree = "<group>"; };
+		B9CADAD1286BA29A006E7151 /* AlbumLookUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumLookUp.xib; sourceTree = "<group>"; };
+		B9CADAD3286BA3A5006E7151 /* Landing.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Landing.xib; sourceTree = "<group>"; };
+		B9F7E97C28622B140098746D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B9F7E9852863B2300098746D /* ArtistDetailed.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArtistDetailed.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +135,7 @@
 			files = (
 				B9405CF2284FE1600028C114 /* OAuthSwift in Frameworks */,
 				B9EE6C04284976D800CD1FD3 /* KeychainAccess in Frameworks */,
+				B9F7E97B286227440098746D /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,12 +183,15 @@
 			children = (
 				B9B15FB1285CD8AD00097FDF /* Common */,
 				B9B15F97285A306100097FDF /* Landing */,
+				B9B15FBD285D0BE600097FDF /* ArtistLookUp */,
+				B9B15FBF285D0FB700097FDF /* ArtistDetailed */,
+				B9B15FBE285D0F6900097FDF /* AlbumLookUp */,
 				B983A45D2846B1E80016EE52 /* AppDelegate.swift */,
 				B983A45F2846B1E80016EE52 /* SceneDelegate.swift */,
-				B983A4632846B1E80016EE52 /* Main.storyboard */,
 				B983A4662846B1E80016EE52 /* Assets.xcassets */,
 				B983A4682846B1E80016EE52 /* LaunchScreen.storyboard */,
 				B983A46B2846B1E80016EE52 /* Info.plist */,
+				B9F7E97C28622B140098746D /* GoogleService-Info.plist */,
 			);
 			path = gndjf;
 			sourceTree = "<group>";
@@ -213,6 +244,7 @@
 				B983A4612846B1E80016EE52 /* LandingViewController.swift */,
 				B9B15F98285A307C00097FDF /* LandingPresenter.swift */,
 				B9B15FA0285A3FA900097FDF /* LandingPresenterBuilder.swift */,
+				B9CADAD3286BA3A5006E7151 /* Landing.xib */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -285,6 +317,39 @@
 			path = Infrastructure;
 			sourceTree = "<group>";
 		};
+		B9B15FBD285D0BE600097FDF /* ArtistLookUp */ = {
+			isa = PBXGroup;
+			children = (
+				B9B15FC2285D102F00097FDF /* ArtistLookUpViewController.swift */,
+				B9B15FC6285D105E00097FDF /* ArtistLookUpPresenter.swift */,
+				B9B15FCC285D109E00097FDF /* ArtistLookUpPresenterBuilder.swift */,
+				B9B15FDA285D138A00097FDF /* ArtistLookUp.xib */,
+			);
+			path = ArtistLookUp;
+			sourceTree = "<group>";
+		};
+		B9B15FBE285D0F6900097FDF /* AlbumLookUp */ = {
+			isa = PBXGroup;
+			children = (
+				B9B15FC4285D104200097FDF /* AlbumLookUpViewController.swift */,
+				B9B15FCA285D108200097FDF /* AlbumLookUpPresenter.swift */,
+				B9B15FD0285D10BF00097FDF /* AlbumLookUpPresenterBuilder.swift */,
+				B9CADAD1286BA29A006E7151 /* AlbumLookUp.xib */,
+			);
+			path = AlbumLookUp;
+			sourceTree = "<group>";
+		};
+		B9B15FBF285D0FB700097FDF /* ArtistDetailed */ = {
+			isa = PBXGroup;
+			children = (
+				B9B15FC0285D101C00097FDF /* ArtistDetailedViewController.swift */,
+				B9B15FC8285D107000097FDF /* ArtistDetailedPresenter.swift */,
+				B9B15FCE285D10AB00097FDF /* ArtistDetailedPresenterBuilder.swift */,
+				B9F7E9852863B2300098746D /* ArtistDetailed.xib */,
+			);
+			path = ArtistDetailed;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -322,6 +387,7 @@
 			packageProductDependencies = (
 				B9EE6C03284976D800CD1FD3 /* KeychainAccess */,
 				B9405CF1284FE1600028C114 /* OAuthSwift */,
+				B9F7E97A286227440098746D /* FirebaseAnalytics */,
 			);
 			productName = gndjf;
 			productReference = B983A45A2846B1E80016EE52 /* gndjf.app */;
@@ -359,6 +425,7 @@
 			packageReferences = (
 				B9EE6C02284976D800CD1FD3 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 				B9405CF0284FE1600028C114 /* XCRemoteSwiftPackageReference "OAuthSwift" */,
+				B9F7E979286227440098746D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = B983A45B2846B1E80016EE52 /* Products */;
 			projectDirPath = "";
@@ -384,9 +451,13 @@
 			files = (
 				B983A46A2846B1E80016EE52 /* LaunchScreen.storyboard in Resources */,
 				B963AC692857D95D0028C155 /* SpotifyScopeConfig.plist in Resources */,
+				B9B15FDB285D138A00097FDF /* ArtistLookUp.xib in Resources */,
+				B9CADAD2286BA29A006E7151 /* AlbumLookUp.xib in Resources */,
 				B983A4672846B1E80016EE52 /* Assets.xcassets in Resources */,
 				B967F3D5284EAF65009A59A8 /* SpotifyOauthConfig.plist in Resources */,
-				B983A4652846B1E80016EE52 /* Main.storyboard in Resources */,
+				B9CADAD4286BA3A5006E7151 /* Landing.xib in Resources */,
+				B9F7E9862863B2300098746D /* ArtistDetailed.xib in Resources */,
+				B9F7E97D28622B140098746D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,13 +495,22 @@
 				B967F3D7284EB0E8009A59A8 /* OauthConfigurator.swift in Sources */,
 				B983A45E2846B1E80016EE52 /* AppDelegate.swift in Sources */,
 				B983A4602846B1E80016EE52 /* SceneDelegate.swift in Sources */,
+				B9B15FC3285D102F00097FDF /* ArtistLookUpViewController.swift in Sources */,
 				B9B15FA1285A3FA900097FDF /* LandingPresenterBuilder.swift in Sources */,
 				B967F3CD284E8889009A59A8 /* KeychainSaveManager.swift in Sources */,
+				B9B15FCF285D10AB00097FDF /* ArtistDetailedPresenterBuilder.swift in Sources */,
 				B94B41E32855016E00F83A31 /* SpotifyAuthParamsBuilder.swift in Sources */,
 				B967F3D1284E89C5009A59A8 /* OauthManager.swift in Sources */,
 				B967F3CB284E8873009A59A8 /* KeychainFetchManager.swift in Sources */,
+				B9B15FD1285D10BF00097FDF /* AlbumLookUpPresenterBuilder.swift in Sources */,
 				B967F3CF284E899A009A59A8 /* Constants.swift in Sources */,
+				B9B15FC9285D107000097FDF /* ArtistDetailedPresenter.swift in Sources */,
+				B9B15FC7285D105E00097FDF /* ArtistLookUpPresenter.swift in Sources */,
 				B967F3D3284EABE1009A59A8 /* AuthUseCase.swift in Sources */,
+				B9B15FCB285D108200097FDF /* AlbumLookUpPresenter.swift in Sources */,
+				B9B15FCD285D109E00097FDF /* ArtistLookUpPresenterBuilder.swift in Sources */,
+				B9B15FC1285D101C00097FDF /* ArtistDetailedViewController.swift in Sources */,
+				B9B15FC5285D104200097FDF /* AlbumLookUpViewController.swift in Sources */,
 				B94B41E528579AEA00F83A31 /* SpotifyScopeParamsBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,14 +526,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B983A4632846B1E80016EE52 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B983A4642846B1E80016EE52 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B983A4682846B1E80016EE52 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -634,7 +706,7 @@
 				INFOPLIST_FILE = gndjf/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -670,7 +742,7 @@
 				INFOPLIST_FILE = gndjf/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -737,6 +809,14 @@
 				kind = branch;
 			};
 		};
+		B9F7E979286227440098746D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -749,6 +829,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B9EE6C02284976D800CD1FD3 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
 			productName = KeychainAccess;
+		};
+		B9F7E97A286227440098746D /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B9F7E979286227440098746D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

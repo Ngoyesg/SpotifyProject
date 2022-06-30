@@ -13,6 +13,9 @@ protocol LandingViewControllerProtocol: AnyObject {
 }
 
 class LandingViewController: UIViewController {
+
+    @IBOutlet weak var loginButton: UIButton!
+    
     
     struct Constant {
         static let alertAuthenticationFailedTitle = "Authentication Failed"
@@ -34,6 +37,11 @@ class LandingViewController: UIViewController {
         }
     }
     
+    @IBAction func onLoginClicked(_ sender: UIButton) {
+       print("button clicked")
+       navigateToMainScreen()
+    }
+    
     func alertInitializationFailed(){
         let alert = UIAlertController(title: Constant.alertAuthenticationFailedTitle, message: Constant.alertAuthenticationFailedMessage, preferredStyle: .alert)
         let okAction = UIAlertAction(title: Constant.alertAuthenticationFailedMessage, style: .default, handler: {_ in fatalError("Initialization failed")})
@@ -46,7 +54,8 @@ class LandingViewController: UIViewController {
 
 extension LandingViewController: LandingViewControllerProtocol {    
     func navigateToMainScreen() {
-        print("we are moviiiiiiiiiing")
+        let secondView = ArtistLookUpViewController(nibName: "ArtistLookUp", bundle: nil)
+        self.navigationController!.pushViewController(secondView, animated: true)
     }
     
     func alertAuthenticationFailed() {
