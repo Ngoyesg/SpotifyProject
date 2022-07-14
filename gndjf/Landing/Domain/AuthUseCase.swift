@@ -29,7 +29,9 @@ class AuthUseCase {
 extension AuthUseCase: AuthUseCaseProtocol {
     func execute(onSuccess: @escaping ()-> (Void), onError: @escaping (AuthUseCase.Error)->(Void)) {
         oauthManager.authenticate { [weak self] token in
-            guard let self = self else { return }
+            guard let self = self else {
+                return
+            }
            self.keychainSaveManager.saveToken(token: token)
             onSuccess()
         } onError: { error in

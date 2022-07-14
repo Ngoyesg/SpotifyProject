@@ -23,7 +23,7 @@
                     <rect key="frame" x="87" y="361" width="241" height="70"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="filled" image="firebase_28dp.png" title="Login"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Login"/>
                     <connections>
                         <action selector="onLoginClicked:" destination="-1" eventType="touchUpInside" id="A93-hC-ruf"/>
                     </connections>
@@ -35,7 +35,6 @@
         </view>
     </objects>
     <resources>
-        <image name="firebase_28dp.png" width="56" height="56"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

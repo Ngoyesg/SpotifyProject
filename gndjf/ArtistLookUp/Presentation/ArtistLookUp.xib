@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,19 +21,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="46X-6X-XW6">
-                    <rect key="frame" x="10" y="400" width="394" height="96"/>
+                    <rect key="frame" x="30" y="400" width="354" height="96"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Artist name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aD3-rL-W4x">
-                            <rect key="frame" x="0.0" y="0.0" width="394" height="41"/>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Artist name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aD3-rL-W4x">
+                            <rect key="frame" x="0.0" y="0.0" width="354" height="41"/>
                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSE-uW-eIP">
-                            <rect key="frame" x="0.0" y="48" width="394" height="48"/>
+                            <rect key="frame" x="0.0" y="48" width="354" height="48"/>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="filled" imagePlacement="trailing" imagePadding="11">
-                                <imageReference key="image" image="text.magnifyingglass" catalog="system" symbolScale="large" renderingMode="template"/>
-                                <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large" weight="bold"/>
+                            <buttonConfiguration key="configuration" style="filled">
                                 <attributedString key="attributedTitle">
                                     <fragment content="Search">
                                         <attributes>
@@ -51,8 +48,8 @@
                     </subviews>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find your artist" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAI-rD-KtC">
-                    <rect key="frame" x="0.0" y="44" width="414" height="62.5"/>
-                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="48"/>
+                    <rect key="frame" x="0.0" y="330" width="414" height="60"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="46"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -60,10 +57,10 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="tertiaryLabelColor"/>
             <constraints>
-                <constraint firstItem="gAI-rD-KtC" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="0yt-Nd-KiN"/>
+                <constraint firstItem="46X-6X-XW6" firstAttribute="top" secondItem="gAI-rD-KtC" secondAttribute="bottom" constant="10" id="7gf-Vg-2eR"/>
                 <constraint firstItem="46X-6X-XW6" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="YR2-Zd-R3K"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="46X-6X-XW6" secondAttribute="trailing" constant="10" id="f2L-gV-nCa"/>
-                <constraint firstItem="46X-6X-XW6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="m5c-sb-NPa"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="46X-6X-XW6" secondAttribute="trailing" constant="30" id="f2L-gV-nCa"/>
+                <constraint firstItem="46X-6X-XW6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="m5c-sb-NPa"/>
                 <constraint firstItem="46X-6X-XW6" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="p0y-v2-OuS"/>
                 <constraint firstItem="gAI-rD-KtC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="wMK-oz-dQi"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="gAI-rD-KtC" secondAttribute="trailing" id="x4q-Wj-0Ec"/>
@@ -72,7 +69,6 @@
         </view>
     </objects>
     <resources>
-        <image name="text.magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="tertiaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

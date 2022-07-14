@@ -16,12 +16,12 @@ class LandingViewController: UIViewController {
 
     @IBOutlet weak var loginButton: UIButton!
     
-    
     struct Constant {
         static let alertAuthenticationFailedTitle = "Authentication Failed"
         static let alertAuthenticationFailedMessage = "Please try again"
         static let alertInitializationFailedTitle = "Initialization Failed"
         static let alertInitializationFailedMessage = "App will be detroyed"
+        static let okAction = "OK"
     }
     
     var presenter: LandingPresenterProtocol?
@@ -38,13 +38,12 @@ class LandingViewController: UIViewController {
     }
     
     @IBAction func onLoginClicked(_ sender: UIButton) {
-       print("button clicked")
-       navigateToMainScreen()
+        navigateToMainScreen()
     }
     
     func alertInitializationFailed(){
-        let alert = UIAlertController(title: Constant.alertAuthenticationFailedTitle, message: Constant.alertAuthenticationFailedMessage, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: Constant.alertAuthenticationFailedMessage, style: .default, handler: {_ in fatalError("Initialization failed")})
+        let alert = UIAlertController(title: Constant.alertInitializationFailedTitle, message: Constant.alertInitializationFailedMessage, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: Constant.okAction, style: .default, handler: {_ in fatalError("Initialization failed")})
         alert.addAction(okAction)
         self.present(alert, animated: true)
     }
@@ -60,7 +59,7 @@ extension LandingViewController: LandingViewControllerProtocol {
     
     func alertAuthenticationFailed() {
         let alert = UIAlertController(title: Constant.alertAuthenticationFailedTitle, message: Constant.alertAuthenticationFailedMessage, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: Constant.alertAuthenticationFailedMessage, style: .default, handler: nil)
+        let okAction = UIAlertAction(title: Constant.okAction, style: .default, handler: nil)
         alert.addAction(okAction)
         self.present(alert, animated: true)
     }
