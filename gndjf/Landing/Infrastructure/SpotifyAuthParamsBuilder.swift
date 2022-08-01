@@ -48,7 +48,7 @@ extension SpotifyAuthParamsBuilder: SpotifyAuthParamsBuilderProtocol {
             let spotifyPlist = try plistReader.readPlist(with: SpotifyAuthParamsBuilder.Constant.plistPath)
             if let consumerKey = spotifyPlist[SpotifyAuthParamsBuilder.Constant.consumerKey] as? String,
                let consumerSecret = spotifyPlist[SpotifyAuthParamsBuilder.Constant.consumerSecret] as? String,
-               let authorizeUrl =  spotifyPlist[SpotifyAuthParamsBuilder.Constant.consumerSecret] as? String,
+               let authorizeUrl =  spotifyPlist[SpotifyAuthParamsBuilder.Constant.authorizeUrl] as? String,
                let accessTokenUrl = spotifyPlist[SpotifyAuthParamsBuilder.Constant.accessTokenUrl] as? String,
                let responseType = spotifyPlist[SpotifyAuthParamsBuilder.Constant.responseType] as? String {
 

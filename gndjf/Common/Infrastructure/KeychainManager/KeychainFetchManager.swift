@@ -12,9 +12,18 @@ protocol KeychainFetchManagerProtocol: AnyObject {
     func fetchToken() -> String?
 }
 
-class KeychainFetchManager: KeychainFetchManagerProtocol {
-    func fetchToken() -> String? {
+class KeychainFetchManager {
+    
+    enum Error: Swift.Error {
+        case unauthorized
+    }
+    
+}
+
+extension KeychainFetchManager: KeychainFetchManagerProtocol {
+    func fetchToken()  -> String? {
         let keychain = Keychain(service:  Constants.bundleID)
-        return keychain[Constants.spotifyKeychain]
+        let token = keychain[Constants.spotifyKeychain]
+        return token
     }
 }

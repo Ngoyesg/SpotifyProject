@@ -7,7 +7,7 @@
 
 import XCTest
 @testable import gndjf
-
+/*
 class ArtistLookUpPresenterBuilderTests: XCTestCase {
     
     private var sut: ArtistLookUpPresenterBuilder!
@@ -36,3 +36,4 @@ class ArtistLookUpPresenterBuilderTests: XCTestCase {
     
 
 }
+*/

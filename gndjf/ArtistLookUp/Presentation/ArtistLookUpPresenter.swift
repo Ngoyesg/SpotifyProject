@@ -19,7 +19,8 @@ class ArtistLookUpPresenter {
     }
     
     weak var viewController: ArtistLookUpViewControllerProtocol?
-    var searchUseCase: SearchUseCaseProtocol
+    
+    let searchUseCase: SearchUseCaseProtocol
 
     init(searchUseCase: SearchUseCaseProtocol){
         self.searchUseCase = searchUseCase
@@ -33,16 +34,17 @@ extension ArtistLookUpPresenter: ArtistLookUpPresenterProtocol {
     }
     
     func processSearch(artistName: String?) {
-        self.searchUseCase.execute(parameter: artistName) { [weak self] in
+        self.searchUseCase.executeSearch(lookUp: artistName) { [weak self] artistsData in
             guard let self = self, let controller = self.viewController else {
                 return
             }
+            // do something with artistsData
+            // zB. navigateToArtistDetail with artistdetails.artist.items
             controller.navigateToArtistDetail()
         } onError: { [weak self] error in
             guard let self = self, let controller = self.viewController else {
                 return
             }
-            print(error)
             controller.alertSearchFailed()
         }
     }

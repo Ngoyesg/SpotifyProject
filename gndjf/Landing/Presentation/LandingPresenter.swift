@@ -43,7 +43,6 @@ extension LandingPresenter: LandingPresenterProtocol {
             guard let self = self, let controller = self.viewController else{
                 return
             }
-            print(error)
             controller.alertAuthenticationFailed()
         }
     }

@@ -8,14 +8,24 @@
 import Foundation
 @testable import gndjf
 
+/*
 class FakeSearchUseCase: SearchUseCaseProtocol {
-    
-    func execute(parameter: String?, onSuccess: @escaping () -> (Void), onError: @escaping (SearchUseCase.Error) -> (Void))  {
-        if parameter == nil {
+    func executeSearch(lookUp artist: String?, onSuccess: @escaping (ArtistLookUpAPIResponse) -> (Void), onError: @escaping (SearchUseCase.Error) -> (Void)) {
+        if artist == nil {
             onError(SearchUseCase.Error.invalidEmptySearch)
         } else {
-            onSuccess()
+            onSuccess(ArtistLookUpAPIResponse(
+                artists:
+                    [ArtistInformation(name: "",
+                                       popularity: 0,
+                                       id: "",
+                                       genres: [0: ""],
+                                       images: [ArtistImages(height: 0, width: 0, url: "")]
+                                      )],
+                currentPagination: " ",
+                followingPagination: " "
+            ))
         }
     }
-    
 }
+*/

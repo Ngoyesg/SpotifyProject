@@ -38,7 +38,7 @@ class LandingViewController: UIViewController {
     }
     
     @IBAction func onLoginClicked(_ sender: UIButton) {
-        navigateToMainScreen()
+        self.presenter?.processLoginClicked()
     }
     
     func alertInitializationFailed(){

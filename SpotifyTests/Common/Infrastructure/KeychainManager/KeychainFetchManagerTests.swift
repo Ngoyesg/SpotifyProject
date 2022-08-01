@@ -11,23 +11,23 @@ import XCTest
 class KeychainFetchManagerTests: XCTestCase {
 
     private var sut: KeychainFetchManager!
-    private var fakeKeychainSaver: KeychainSaveManager!
+    private var keychainSaver: KeychainSaveManager!
     
     override func setUp() {
         super.setUp()
         sut = KeychainFetchManager()
-        fakeKeychainSaver =  KeychainSaveManager()
+        keychainSaver =  KeychainSaveManager()
     }
     
     override func tearDown() {
-        fakeKeychainSaver = nil
+        keychainSaver = nil
         sut = nil
         super.tearDown()
     }
     
     func test_WHEN_fetchIsCalled_aTokenSaved_THEN_itShouldReturnSuchToken() {
        let anyTestableToken = "testableToken"
-        fakeKeychainSaver.saveToken(token: anyTestableToken)
+        keychainSaver.saveToken(token: anyTestableToken)
         let returnable = sut.fetchToken()
         XCTAssertEqual(anyTestableToken, returnable)
     }

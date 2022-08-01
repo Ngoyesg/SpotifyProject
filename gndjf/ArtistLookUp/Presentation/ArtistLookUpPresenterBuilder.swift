@@ -9,21 +9,19 @@ import Foundation
 
 class ArtistLookUpPresenterBuilder {
     
-    enum Error: Swift.Error {
-        case buildingFailed
+    func build() -> ArtistLookUpPresenterProtocol {
+        
+        let keychainFetchManager = KeychainFetchManager()
+        
+        let URLRequestBuilder = URLRequestBuilder()
+
+        let RESTClient = RESTClient()
+
+        let artistLookUpService = ArtistLookUpService(keychainFetchManager: keychainFetchManager, urlRequestBuilder: URLRequestBuilder, restClient: RESTClient)
+        
+        let searchUseCase = SearchUseCase(artistLookUpService: artistLookUpService)
+
+        return ArtistLookUpPresenter(searchUseCase: searchUseCase)
     }
     
-    func build() throws -> ArtistLookUpPresenter {
-        
-        do {
-            
-            let searchUseCase = SearchUseCase()
-            return ArtistLookUpPresenter(searchUseCase: searchUseCase)
-            
-        } catch let error {
-            
-            print(error.localizedDescription)
-            throw ArtistLookUpPresenterBuilder.Error.buildingFailed
-        }
-    }
 }

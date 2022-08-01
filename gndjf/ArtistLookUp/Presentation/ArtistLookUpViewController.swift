@@ -12,8 +12,6 @@ protocol ArtistLookUpViewControllerProtocol: AnyObject {
     func alertSearchFailed()
 }
 
-
-
 class ArtistLookUpViewController: UIViewController {
     
     @IBOutlet weak var searchButton: UIButton!
@@ -32,10 +30,10 @@ class ArtistLookUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         do {
-            self.presenter = try ArtistLookUpPresenterBuilder().build()
+            self.presenter = ArtistLookUpPresenterBuilder().build()
             self.presenter?.setViewController(self)
         } catch {
-            self.alertInitializationFailed()
+            alertInitializationFailed()
         }
     }
     
@@ -47,8 +45,8 @@ class ArtistLookUpViewController: UIViewController {
     }
     
     @IBAction func onSearchButtonClicked(_ sender: UIButton) {
-        navigateToArtistDetail()
-        presenter?.processSearch(artistName: artistName.text)
+        /*presenter?.processSearch(artistName: artistName.text)*/
+        presenter?.processSearch(artistName: "David Bowie")
     }
 }
 

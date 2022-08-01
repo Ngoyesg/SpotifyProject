@@ -8,28 +8,31 @@
 import Foundation
 
 protocol SearchUseCaseProtocol: AnyObject {
-    func execute(parameter: String?, onSuccess: @escaping ()-> (Void), onError: @escaping (SearchUseCase.Error)->(Void))
+    func executeSearch(lookUp artist: String?, onSuccess: @escaping ([ArtistInformation]) -> (Void), onError: @escaping (WebServiceError) ->(Void))
 }
 
 class SearchUseCase {
     
-    enum Error: Swift.Error {
-        case invalidEmptySearch, searchFailed
+    let artistLookUpService: ArtistLookUpServiceProtocol
+    
+    init(artistLookUpService: ArtistLookUpServiceProtocol) {
+        self.artistLookUpService = artistLookUpService
     }
 }
 
 extension SearchUseCase: SearchUseCaseProtocol {
-    func execute(parameter: String?, onSuccess: @escaping ()-> (Void), onError: @escaping (SearchUseCase.Error)->(Void)) {
-        guard parameter != nil else {
-            onError(SearchUseCase.Error.invalidEmptySearch)
-            return
-        }
-        do {
-            // let succeded = try
-            onSuccess()
-        } catch {
-            onError(SearchUseCase.Error.searchFailed)
+    func executeSearch(lookUp artist: String?, onSuccess: @escaping ([ArtistInformation]) -> (Void), onError: @escaping (WebServiceError) ->(Void)) {
+        
+        artistLookUpService.getArtistInformation(artist: artist) { [weak self] artistsInformation in
+            guard let self = self else {
+                return
+            }
+            onSuccess(artistsInformation.artists.items)
+        } onError: { [weak self] webRequestError  in
+            guard let self = self else {
+                return
+            }
+            onError(webRequestError)
         }
     }
-
 }
