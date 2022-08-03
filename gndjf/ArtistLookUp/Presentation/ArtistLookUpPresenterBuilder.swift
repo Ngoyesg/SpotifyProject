@@ -13,11 +13,11 @@ class ArtistLookUpPresenterBuilder {
         
         let keychainFetchManager = KeychainFetchManager()
         
-        let URLRequestBuilder = URLRequestBuilder()
+        let URLRequestBuilder = URLRequestBuilder(keychainManager: keychainFetchManager)
 
         let RESTClient = RESTClient()
 
-        let artistLookUpService = ArtistLookUpService(keychainFetchManager: keychainFetchManager, urlRequestBuilder: URLRequestBuilder, restClient: RESTClient)
+        let artistLookUpService = ArtistLookUpService(urlRequestBuilder: URLRequestBuilder, restClient: RESTClient)
         
         let searchUseCase = SearchUseCase(artistLookUpService: artistLookUpService)
 

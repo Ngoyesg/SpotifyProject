@@ -7,37 +7,24 @@
 
 import Foundation
 
-
 protocol ArtistLookUpServiceProtocol: AnyObject {
-    func getArtistInformation(artist: String?, onSuccess: @escaping (ArtistLookUpAPIResponse) -> (Void), onError: @escaping (WebServiceError)-> (Void))
+    func getArtistInformation(artist: String, onSuccess: @escaping (ArtistLookUpAPIResponse) -> Void, onError: @escaping (WebServiceError) -> Void)
 }
 
 class ArtistLookUpService {
     
-    let keychainFetchManager: KeychainFetchManagerProtocol
     let urlRequestBuilder: URLRequestBuilderProtocol
-    let restClient: RESTClient
+    let restClient: WebClientProtocol
     
-    init(keychainFetchManager: KeychainFetchManagerProtocol, urlRequestBuilder: URLRequestBuilder, restClient: RESTClient) {
-        self.keychainFetchManager = keychainFetchManager
+    init(urlRequestBuilder: URLRequestBuilderProtocol, restClient: WebClientProtocol) {
         self.urlRequestBuilder = urlRequestBuilder
         self.restClient = restClient
     }
     
-    private func getURLRequest(from artist: String?) -> URLRequest? {
-        do {
-            let token = keychainFetchManager.fetchToken()
-            let request = try urlRequestBuilder.buildRequest(for: artist, type: .artist, authorization: token)
-            return request
-        } catch {
-            return nil
-        }
-    }
-    
     func processResponse(
         responseToDecode: Data,
-        onSuccess: @escaping (ArtistLookUpAPIResponse) -> (Void),
-        onError: @escaping (WebServiceError)-> (Void)) {
+        onSuccess: @escaping (ArtistLookUpAPIResponse) -> Void,
+        onError: @escaping (WebServiceError) -> Void) {
             
             let decoder = JSONDecoder()
             
@@ -64,18 +51,9 @@ class ArtistLookUpService {
                 onError(.errorDecodingData)
             }
         }
-}
-
-extension ArtistLookUpService: ArtistLookUpServiceProtocol {
     
-    func getArtistInformation(artist: String?, onSuccess: @escaping (ArtistLookUpAPIResponse) -> Void, onError: @escaping (WebServiceError) -> Void) {
-        
-        guard let artistRequest = self.getURLRequest(from: artist) else {
-            onError(WebServiceError.invalidRequest)
-            return
-        }
-
-        restClient.performRequest(request: artistRequest) { [weak self] dataToDecode in
+    func performRequest(request: URLRequest, onSuccess: @escaping (ArtistLookUpAPIResponse) -> Void, onError: @escaping (WebServiceError) -> Void) {
+        restClient.performRequest(request: request) { [weak self] dataToDecode in
             guard let self = self else {
                 return
             }
@@ -86,6 +64,46 @@ extension ArtistLookUpService: ArtistLookUpServiceProtocol {
             }
             onError(errorThrown)
         }
+    }
+}
+
+extension ArtistLookUpService: ArtistLookUpServiceProtocol {
+    
+    func getArtistInformation(artist: String, onSuccess: @escaping (ArtistLookUpAPIResponse) -> Void, onError: @escaping (WebServiceError) -> Void) {
+        
+        do {
+            
+            let endpoint = ArtistEndpoint(search: artist)
+            self.urlRequestBuilder.setEndpoint(endpoint: endpoint)
+            let request = try urlRequestBuilder.build()
+            performRequest(request: request, onSuccess: onSuccess, onError: onError)
+            
+        } catch let errorThrown {
+            
+            if let error = errorThrown as? URLRequestBuilder.Error, error == URLRequestBuilder.Error.unauthorized {
+                onError(.unauthorizedRequest)
+            }
+            if let error = errorThrown as? URLRequestBuilder.Error, error == URLRequestBuilder.Error.noURL {
+                onError(.noURLFound)
+            }
+            if let error = errorThrown as? URLRequestBuilder.Error, error == URLRequestBuilder.Error.noEndpoint {
+                onError(.noEndpointFound)
+            }
+            
+            if let error = errorThrown as? WebServiceError, error == WebServiceError.errorDecodingData {
+                onError(.errorDecodingData)
+            }
+            if let error = errorThrown as? WebServiceError, error == WebServiceError.invalidRequest {
+                onError(.invalidRequest)
+            }
+            if let error = errorThrown as? WebServiceError, error == WebServiceError.invalidStatusCodeResponse {
+                onError(.invalidStatusCodeResponse)
+            }
+            if let error = errorThrown as? WebServiceError, error == WebServiceError.noDataToDecode {
+                onError(.noDataToDecode)
+            }
+        }
+        
     }
 }
 

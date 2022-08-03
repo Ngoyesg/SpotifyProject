@@ -10,8 +10,10 @@ import Foundation
 
 class FakeKeychainFetchManager: KeychainFetchManagerProtocol {
         
+    var errorCase = false
+    
     func fetchToken() -> String? {
-        return "TokenExample"
+        return (errorCase) ? nil : "tokenFoo"
     }
 
 }

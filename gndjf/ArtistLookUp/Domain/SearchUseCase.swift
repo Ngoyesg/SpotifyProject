@@ -22,7 +22,10 @@ class SearchUseCase {
 
 extension SearchUseCase: SearchUseCaseProtocol {
     func executeSearch(lookUp artist: String?, onSuccess: @escaping ([ArtistInformation]) -> (Void), onError: @escaping (WebServiceError) ->(Void)) {
-        
+        guard let artist = artist else {
+            onError(WebServiceError.invalidRequest)
+            return
+        }
         artistLookUpService.getArtistInformation(artist: artist) { [weak self] artistsInformation in
             guard let self = self else {
                 return

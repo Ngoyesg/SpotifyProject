@@ -8,24 +8,23 @@
 import Foundation
 @testable import gndjf
 
-/*
+
 class FakeSearchUseCase: SearchUseCaseProtocol {
-    func executeSearch(lookUp artist: String?, onSuccess: @escaping (ArtistLookUpAPIResponse) -> (Void), onError: @escaping (SearchUseCase.Error) -> (Void)) {
-        if artist == nil {
-            onError(SearchUseCase.Error.invalidEmptySearch)
+    
+    var searchWasExecuted = false
+    var successCase = true
+    
+    func executeSearch(lookUp artist: String?, onSuccess: @escaping ([ArtistInformation]) -> (Void), onError: @escaping (WebServiceError) -> (Void)) {
+        
+        searchWasExecuted = true
+               
+        if successCase {
+            let artistInfo = ArtistInformation(id: "Foo ID", images: [ArtistImages(height: 1, width: 1, url: "Foo URL")], name: "Foo Artitst", popularity: 1, genres: ["Foo Genre"])
+            onSuccess([artistInfo])
         } else {
-            onSuccess(ArtistLookUpAPIResponse(
-                artists:
-                    [ArtistInformation(name: "",
-                                       popularity: 0,
-                                       id: "",
-                                       genres: [0: ""],
-                                       images: [ArtistImages(height: 0, width: 0, url: "")]
-                                      )],
-                currentPagination: " ",
-                followingPagination: " "
-            ))
+            onError(WebServiceError.searchFailed)
         }
     }
+    
 }
-*/
+

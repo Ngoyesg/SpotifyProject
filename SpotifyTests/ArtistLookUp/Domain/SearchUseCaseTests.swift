@@ -7,44 +7,61 @@
 
 import XCTest
 @testable import gndjf
-/*
+
 class SearchUseCaseTests: XCTestCase {
     
     private var sut: SearchUseCase!
-    var artistLookUpService: ArtistLookUpService!
+    var fakeArtistLookUpService: FakeArtistLookUpService!
     
     override func setUp() {
         super.setUp()
+        fakeArtistLookUpService = FakeArtistLookUpService()
+        sut = SearchUseCase(artistLookUpService: fakeArtistLookUpService)
     }
     
     override func tearDown() {
         sut = nil
+        fakeArtistLookUpService = nil
         super.tearDown()
     }
     
-    func test_WHEN_executeIsInvoked_GIVEN_anEmptyParameter_THEN_itShouldCallOnError() {
+    func test_WHEN_executeIsInvoked_GIVEN_anEmptyParameter_THEN_itShouldThrowInvalidSearchError() {
         
         let emptyParameter: String? = nil
-        let expectation = XCTestExpectation(description: "onError was called")
+       
         sut.executeSearch(lookUp: emptyParameter) { _ in
             XCTFail()
-        } onError: { _ in
-            expectation.fulfill()
+        } onError: { errorThrown in
+            XCTAssertEqual(errorThrown as WebServiceError, WebServiceError.invalidRequest)
         }
-        wait(for: [expectation], timeout: 0.1)
     }
 
-    func test_WHEN_executeIsInvoked_GIVEN_anyValidString_THEN_itShouldCallOnSuccess() {
+    func test_WHEN_executeIsInvoked_GIVEN_successSearchCase_THEN_onSuccessShouldBeCalled() {
         
         let anyValidString = "anyString"
-        let expectation = XCTestExpectation(description: "onSuccess was called")
+        fakeArtistLookUpService.successCase = true
         
-        sut.executeSearch(lookUp: anyValidString) { _ in
-            expectation.fulfill()
+        let artistImages = [ArtistImages(height: 1, width: 1, url: "Foo URL")]
+        let artistInfo = ArtistInformation(id: "Foo ID", images: artistImages, name: "Foo Artitst", popularity: 1, genres: ["Foo Genre"])
+        let expectedDataToReturn = [artistInfo]
+        
+        sut.executeSearch(lookUp: anyValidString) { returningData in
+            XCTAssertEqual(returningData, expectedDataToReturn)
         } onError: { _ in
             XCTFail()
         }
-        wait(for: [expectation], timeout: 0.1)
+    }
+        
+    func test_WHEN_executeIsInvoked_GIVEN_failedSearchCase_THEN_onSuccessShouldBeCalled() {
+        
+        let anyValidString = "anyString"
+        fakeArtistLookUpService.successCase = false
+        
+        sut.executeSearch(lookUp: anyValidString) { _ in
+            XCTFail()
+        } onError: { errorThrown in
+            XCTAssertEqual(errorThrown as WebServiceError, WebServiceError.searchFailed)
+        }
     }
 }
-*/
+

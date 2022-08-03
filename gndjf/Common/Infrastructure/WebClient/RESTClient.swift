@@ -28,9 +28,9 @@ class RESTClient{
     }
 }
     
-extension RESTClient: WebClient {
+extension RESTClient: WebClientProtocol {
     
-    func performRequest(request: URLRequest, onSuccess: @escaping (Data) -> (), onError: @escaping (WebServiceError) -> ()) {
+    func performRequest(request: URLRequest, onSuccess: @escaping (Data) -> Void, onError: @escaping (WebServiceError) -> Void) {
         
         let urlSession = URLSession(configuration: .default)
         

@@ -8,32 +8,65 @@
 import Foundation
 
 protocol URLRequestBuilderProtocol: AnyObject {
-    func buildRequest(for idToSearch: String?, type queryType: QueryType, authorization token: String?) throws -> URLRequest
+    func setEndpoint(endpoint: BaseEndpoint)
+    func build() throws -> URLRequest
 }
 
 class URLRequestBuilder {
     
     enum Error: Swift.Error {
-        case emptyRequest, unauthorized, invalidURL
+        case unauthorized, noURL, noEndpoint
     }
     
+    var endpoint: BaseEndpoint?
+    let keychainManager: KeychainFetchManagerProtocol
+    
+    init(keychainManager: KeychainFetchManagerProtocol){
+        self.endpoint = nil
+        self.keychainManager = keychainManager
+    }
+    
+    func setHTTPMethod(to urlRequest: inout URLRequest, with method: HTTPMethod) {
+        urlRequest.httpMethod = method.rawValue
+    }
+    
+    func addAuthorization(to urlRequest: inout URLRequest, with token: String) {
+        urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+    }
+    
+    func addHTTPHeaders(to urlRequest: inout URLRequest) {
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Accept")
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+    }
+        
 }
+
 extension URLRequestBuilder: URLRequestBuilderProtocol {
     
-    func buildRequest(for idToSearch: String?, type queryType: QueryType, authorization token: String?) throws -> URLRequest {
+    func setEndpoint(endpoint: BaseEndpoint) {
+        self.endpoint = endpoint
+    }
+    
+    
+    func build() throws -> URLRequest {
         
-        guard let idToSearch = idToSearch else {
-            throw URLRequestBuilder.Error.emptyRequest
+        guard let endpoint = self.endpoint else {
+            throw Error.noEndpoint
         }
         
-        guard let token = token else {
-            throw URLRequestBuilder.Error.unauthorized
+        guard let url = endpoint.getURL() else {
+            throw Error.noURL
         }
         
-        guard let url =  URLComponents(search: idToSearch, for: queryType).url else {
-            throw URLRequestBuilder.Error.invalidURL
-        }
+        var urlRequest = URLRequest(url: url)
+        self.setHTTPMethod(to: &urlRequest, with: endpoint.httpMethod)
+        self.addHTTPHeaders(to: &urlRequest)
         
-        return URLRequest(authorization: token, for: url)
+        guard let token = self.keychainManager.fetchToken() else {
+            throw Error.unauthorized
+        }
+        self.addAuthorization(to: &urlRequest, with: token)
+        
+        return urlRequest
     }
 }

@@ -4,7 +4,7 @@
 //
 //  Created by Natalia Goyes on 30/06/22.
 //
-/*
+
 
 import XCTest
 @testable import gndjf
@@ -12,32 +12,52 @@ import XCTest
 class ArtistLookUpPresenterTests: XCTestCase {
     
     private var sut: ArtistLookUpPresenter!
-    var fakeViewController: FakeArtistLookUpViewController!
+    private var fakeSearchUseCase: FakeSearchUseCase!
+    private var fakeViewController: FakeArtistLookUpViewController!
         
     override func setUp() {
         super.setUp()
-        let fakeSearchUseCase = FakeSearchUseCase()
+        fakeSearchUseCase = FakeSearchUseCase()
         fakeViewController = FakeArtistLookUpViewController()
         sut = ArtistLookUpPresenter(searchUseCase: fakeSearchUseCase)
-        sut.setViewController(fakeViewController)
     }
     
     override func tearDown() {
         sut = nil
+        fakeViewController = nil
+        fakeSearchUseCase = nil
         super.tearDown()
     }
     
-    func test_WHEN_processSearchIsInvoked_GIVEN_emptyTextFieldAndViewControllerSetUp_THEN_itShouldAlertUser() {
-        let emptyText: String? = nil
-        sut.processSearch(artistName: emptyText)
-        XCTAssertTrue(fakeViewController.alertWasInitialized)
+    func test_WHEN_setViewControllerIsInvoked_GIVEN_aValidViewController_THEN_propertyShouldNotBeNil(){
+        let fakeViewController = FakeArtistLookUpViewController()
+        sut.setViewController(fakeViewController)
+        XCTAssertNotNil(sut.viewController)
+    }
+   
+    func test_WHEN_processSearchIsInvoked_GIVEN_anyArtist_THEN_searchWasExecutedShouldBeTrue() {
+        let anyArtistSearch: String? = "Foo Artist"
+        sut.processSearch(artistName: anyArtistSearch)
+        XCTAssertTrue(fakeSearchUseCase.searchWasExecuted)
     }
     
-    func test_WHEN_processSearchIsInvoked_GIVEN_aValidTextFieldAndViewControllerSetUp_THEN_itShouldNavigateToNextScreen() {
-        let emptyText: String? = "anyString"
-        sut.processSearch(artistName: emptyText)
+    func test_WHEN_processSearchIsInvoked_GIVEN_successfulSearchAndViewControllerSet_THEN_navigationWasInitializedShouldBeTrue() {
+        
+        sut.setViewController(fakeViewController)
+        let anyArtistSearch: String? = "Foo Artist"
+        fakeSearchUseCase.successCase = true
+        sut.processSearch(artistName: anyArtistSearch)
         XCTAssertTrue(fakeViewController.navigationWasInitialized)
     }
-
+  
+    
+    func test_WHEN_processSearchIsInvoked_GIVEN_failedSearchAndViewControllerSet_THEN_alertWasIntializedShouldBeTrue() {
+        
+        sut.setViewController(fakeViewController)
+        let anyArtistSearch: String? = "Foo Artist"
+        fakeSearchUseCase.successCase = false
+        sut.processSearch(artistName: anyArtistSearch)
+        XCTAssertTrue(fakeViewController.alertWasInitialized)
+    }
 }
-*/
+
