@@ -7,7 +7,6 @@
 
 import Foundation
 @testable import gndjf
-import SwiftUI
 
 class FakeArtistLookUpService: ArtistLookUpServiceProtocol {
     

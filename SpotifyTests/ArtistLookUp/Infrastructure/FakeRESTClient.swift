@@ -23,12 +23,23 @@ class FakeRESTClient: WebClientProtocol {
         return encodedData
     }
         
-    var successCase: Bool = false
+    private func getUndecodableData() -> Data {
+        let anyFooStruct = ArtistImages(height: 1, width: 1, url: "")
+        let encoder = JSONEncoder()
+        
+        let encodedData = try! encoder.encode(anyFooStruct.self)
+        
+        return encodedData
+    }
+        
+    
+    var decodableDataCase: Bool = true
+    var successCase: Bool = true
     
     func performRequest(request: URLRequest, onSuccess: @escaping (Data) -> Void, onError: @escaping (WebServiceError) -> Void) {
         
         if (successCase) {
-            let dataToPass = getEncodedData()
+            let dataToPass = decodableDataCase ? getEncodedData() : getUndecodableData()
             onSuccess(dataToPass)
         } else {
             onError(WebServiceError.invalidRequest)

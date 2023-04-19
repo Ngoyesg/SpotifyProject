@@ -8,11 +8,11 @@
 import Foundation
 
 class ArtistDetailedPresenterBuilder {
-    /*
+    
     func build() -> ArtistDetailedPresenter {
-        l
      
         return ArtistDetailedPresenter
     }
-    */
+    
 }
+

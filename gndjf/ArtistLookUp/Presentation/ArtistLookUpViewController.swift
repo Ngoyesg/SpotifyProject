@@ -53,8 +53,8 @@ class ArtistLookUpViewController: UIViewController {
 extension ArtistLookUpViewController: ArtistLookUpViewControllerProtocol {
     
     func navigateToArtistDetail() {
-        let secondView = ArtistDetailedViewController(nibName: "ArtistDetailed", bundle: nil)
-        self.navigationController!.pushViewController(secondView, animated: true)
+        //let secondView = ArtistDetailedViewController(nibName: "ArtistDetailed", bundle: nil)
+        // self.navigationController!.pushViewController(secondView, animated: true)
     }
   
     func alertSearchFailed() {

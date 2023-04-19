@@ -34,5 +34,14 @@ extension ArtistDetailedPresenter: ArtistDetailedPresenterProtocol {
         self.viewController = viewController
     }
     
+    func getArtistInfoCount() -> Int? {
+        return artistsInfo?.artists.items.count
+    }
+    
+    func getArtisDetailedInfo(at row: Int) ->  artistinformation{
+        return
+    }
+    
     
 }
+

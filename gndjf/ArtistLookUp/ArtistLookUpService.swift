@@ -13,6 +13,10 @@ protocol ArtistLookUpServiceProtocol: AnyObject {
 
 class ArtistLookUpService {
     
+    enum Error: Swift.Error {
+        case URLRequestError, webClientError
+    }
+    
     let urlRequestBuilder: URLRequestBuilderProtocol
     let restClient: WebClientProtocol
     
@@ -89,7 +93,6 @@ extension ArtistLookUpService: ArtistLookUpServiceProtocol {
             if let error = errorThrown as? URLRequestBuilder.Error, error == URLRequestBuilder.Error.noEndpoint {
                 onError(.noEndpointFound)
             }
-            
             if let error = errorThrown as? WebServiceError, error == WebServiceError.errorDecodingData {
                 onError(.errorDecodingData)
             }
@@ -103,7 +106,6 @@ extension ArtistLookUpService: ArtistLookUpServiceProtocol {
                 onError(.noDataToDecode)
             }
         }
-        
     }
 }
 

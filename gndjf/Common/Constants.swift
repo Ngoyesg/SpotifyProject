@@ -10,4 +10,5 @@ import Foundation
 struct Constants {
     static let bundleID = "nataDev.gndjf"
     static let spotifyKeychain = "SpotifyToken"
+    static let coreModel = "FetchedInfoHistory"
 }

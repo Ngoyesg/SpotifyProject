@@ -57,7 +57,7 @@ extension ArtistDetailedViewController: ArtistDetailedViewControllerProtocol {
         self.present(alert, animated: true)
     }
 }
-/*
+
 extension ArtistDetailedViewController: UITableViewDelegate, UITableViewDataSource {
     
     
@@ -70,4 +70,4 @@ extension ArtistDetailedViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     
-}*/
+}
