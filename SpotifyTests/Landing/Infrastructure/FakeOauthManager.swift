@@ -17,6 +17,17 @@ class FakeOauthManager: OauthManagerProtocol {
     var authenticateWasCalled = false
     var success = true
     
+    
+    func authenticate(processResult: @escaping (String?, Error?) -> Void) {
+        authenticateWasCalled = true
+        
+        if success {
+            processResult("dummy", nil)
+        } else {
+            processResult(nil,FakeOauthManager.FakeError.dummyError)
+        }
+    }
+    /*
     func authenticate(onSuccess: @escaping (String) -> (Void), onError: @escaping (Error) -> (Void)) {
         authenticateWasCalled = true
         
@@ -25,5 +36,5 @@ class FakeOauthManager: OauthManagerProtocol {
         } else {
             onError(FakeOauthManager.FakeError.dummyError)
         }
-    }
+    }*/
 }

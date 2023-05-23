@@ -9,7 +9,9 @@ import Foundation
 import OAuthSwift
 
 protocol OauthManagerProtocol: AnyObject {
-    func authenticate(onSuccess: @escaping (String)->(Void), onError: @escaping (Error)-> (Void))
+    func authenticate(processResult: @escaping (String?, Error?) -> Void)
+    #warning("delete this commented method when finished refactoring")
+    //func authenticate(onSuccess: @escaping (String)->(Void), onError: @escaping (Error)-> (Void))
 }
 
 class OauthManager {
@@ -23,17 +25,17 @@ class OauthManager {
 }
 
 extension OauthManager: OauthManagerProtocol {
-    func authenticate(onSuccess: @escaping (String)->(Void), onError: @escaping (Error)-> (Void)) {
+    func authenticate(processResult: @escaping (String?, Error?) -> Void) {
         self.oauthswift.authorize(
             withCallbackURL: URL(string: self.scopeParams.withCallbackURL)!,
             scope: self.scopeParams.scope,
             state: generateState(withLength: self.scopeParams.state)
         ) { result in
                 switch result {
-                case .success(let (credential, response, parameters)):
-                    onSuccess(credential.oauthToken)
+                case .success(let (credential, _, _)):
+                    processResult(credential.oauthToken, nil)
                 case .failure(let error):
-                    onError(error)
+                    processResult(nil, error)
                 }
         }
     }

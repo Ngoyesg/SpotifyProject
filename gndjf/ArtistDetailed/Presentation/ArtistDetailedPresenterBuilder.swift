@@ -10,8 +10,7 @@ import Foundation
 class ArtistDetailedPresenterBuilder {
     
     func build() -> ArtistDetailedPresenter {
-     
-        return ArtistDetailedPresenter
+        return ArtistDetailedPresenter()
     }
     
 }

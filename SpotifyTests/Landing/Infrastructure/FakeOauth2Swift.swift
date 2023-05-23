@@ -7,15 +7,16 @@
 
 import Foundation
 import OAuthSwift
+import XCTest
 
 class FakeOauth2Swift: OAuth2Swift {
     
     var success = true
-    var authorizeWasCalled = false
-    
+    var authorizeWasCalledExpectation: XCTestExpectation?
+
     override func authorize(withCallbackURL callbackURL: URLConvertible?, scope: String, state: String, parameters: OAuth2Swift.Parameters = [:], headers: OAuthSwift.Headers? = nil, completionHandler completion: @escaping OAuth2Swift.TokenCompletionHandler) -> OAuthSwiftRequestHandle? {
        
-        authorizeWasCalled = true
+        authorizeWasCalledExpectation?.fulfill()
         
         if success {
             let credentialForToken: OAuthSwiftCredential = OAuthSwiftCredential(consumerKey: "dummy", consumerSecret: "dummy")

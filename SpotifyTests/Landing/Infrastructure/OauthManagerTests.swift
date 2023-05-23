@@ -19,7 +19,6 @@ class OauthManagerTests: XCTestCase {
         spotifyScopeParams = SpotifyScopeParams(withCallbackURL: "dummy", scope: "dummy", state: 1)
         sut = OauthManager(oauth2Swift: fakeOauth2Swift, spotifyScopeParams: spotifyScopeParams)
         super.setUp()
-        
     }
     
     override func tearDown() {
@@ -29,33 +28,52 @@ class OauthManagerTests: XCTestCase {
         super.tearDown()
     }
     
-    func test_WHEN_authenticateIsCalled_THEN_authorizeCalledShouldBeTrue() {
-        sut.authenticate { _ in
-        } onError: { _ in
+    func test_WHEN_authenticateIsCalled_THEN_authorizeShouldBeCalled() {
+        //arrange
+        let expectation = XCTestExpectation(description: "Authorize should be called")
+        fakeOauth2Swift.authorizeWasCalledExpectation = expectation
+        
+        //act
+        sut.authenticate { _, _ in
         }
-        XCTAssertTrue(fakeOauth2Swift.authorizeWasCalled)
+
+        //assert
+        self.wait(for: [expectation], timeout: 1)
+
     }
     
-    func test_WHEN_authenticateIsCalled_GIVEN_oauth2SwiftSucceded_THEN_itShouldCallSuccess() {
+    func test_WHEN_authenticateIsCalled_GIVEN_oauth2SwiftSucceded_THEN_tokenShouldNotBeNilErrorShouldBeNil() {
+        //arrange
         fakeOauth2Swift.success = true
-        let expectation = XCTestExpectation(description: "It should call success")
-        sut.authenticate { token in
-            expectation.fulfill()
-        } onError: { _ in
-            XCTFail()
+        var retrivedToken: String? = nil
+        var retrievedError: Error? = nil
+        
+        //act
+        sut.authenticate { token, error in
+            retrivedToken = token
+            retrievedError = error
         }
-        wait(for: [expectation], timeout: 0.1)
+        
+        //assert
+        XCTAssertNotNil(retrivedToken)
+        XCTAssertNil(retrievedError)
     }
     
-    func test_WHEN_authenticateIsCalled_GIVEN_oauth2SwiftFailed_THEN_itShouldCalledOnError() {
+    func test_WHEN_authenticateIsCalled_GIVEN_oauth2SwiftFailed_THEN_tokenShouldBeNilErrorShouldBeMissingToken() {
+        //arrange
         fakeOauth2Swift.success = false
-        let expectation = XCTestExpectation(description: "It should call onError")
-        sut.authenticate { _ in
-            XCTFail()
-        } onError: { _ in
-            expectation.fulfill()
+        var retrivedToken: String? = nil
+        var retrievedError: Error? = nil
+        
+        //act
+        sut.authenticate { token, error in
+            retrivedToken = token
+            retrievedError = error
         }
-        wait(for: [expectation], timeout: 0.1)
+        
+        //assert
+        XCTAssertNotNil(retrievedError)
+        XCTAssertNil(retrivedToken)
     }
     
 }

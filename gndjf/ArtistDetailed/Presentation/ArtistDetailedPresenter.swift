@@ -38,10 +38,10 @@ extension ArtistDetailedPresenter: ArtistDetailedPresenterProtocol {
         return artistsInfo?.artists.items.count
     }
     
-    func getArtisDetailedInfo(at row: Int) ->  artistinformation{
-        return
-    }
-    
-    
+//    func getArtisDetailedInfo(at row: Int) ->  ArtistInformation {
+//        return
+//    }
+//    
+//    
 }
 

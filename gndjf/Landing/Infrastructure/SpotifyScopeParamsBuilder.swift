@@ -7,11 +7,6 @@
 
 import Foundation
 
-struct SpotifyScopeParams {
-    let withCallbackURL: String
-    let scope: String
-    let state: Int
-}
 
 protocol SpotifyScopeParamsBuilderProtocol {
     func getParams() throws -> SpotifyScopeParams

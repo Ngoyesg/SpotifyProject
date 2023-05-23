@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B90F604C29F07FD4007343F6 /* SpotifyScopeParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90F604B29F07FD4007343F6 /* SpotifyScopeParams.swift */; };
 		B90FAB122854F9EE000632D1 /* PlistReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90FAB112854F9EE000632D1 /* PlistReaderTests.swift */; };
 		B91873962878B762009EEE27 /* SearchUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91873952878B762009EEE27 /* SearchUseCaseTests.swift */; };
 		B91873982878B930009EEE27 /* FakeSearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91873972878B930009EEE27 /* FakeSearchUseCase.swift */; };
@@ -94,6 +95,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B90F604B29F07FD4007343F6 /* SpotifyScopeParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyScopeParams.swift; sourceTree = "<group>"; };
 		B90FAB082854F46B000632D1 /* SpotifyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpotifyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B90FAB112854F9EE000632D1 /* PlistReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistReaderTests.swift; sourceTree = "<group>"; };
 		B91873952878B762009EEE27 /* SearchUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUseCaseTests.swift; sourceTree = "<group>"; };
@@ -444,6 +446,7 @@
 				B967F3D4284EAF65009A59A8 /* SpotifyOauthConfig.plist */,
 				B963AC682857D95D0028C155 /* SpotifyScopeConfig.plist */,
 				B967F3D0284E89C5009A59A8 /* OauthManager.swift */,
+				B90F604B29F07FD4007343F6 /* SpotifyScopeParams.swift */,
 				B967F3D6284EB0E8009A59A8 /* OauthConfigurator.swift */,
 				B94B41E22855016E00F83A31 /* SpotifyAuthParamsBuilder.swift */,
 				B94B41E428579AEA00F83A31 /* SpotifyScopeParamsBuilder.swift */,
@@ -746,6 +749,7 @@
 				B930275E28B03CF3008E5833 /* CoreDataManager.swift in Sources */,
 				B9B15FCD285D109E00097FDF /* ArtistLookUpPresenterBuilder.swift in Sources */,
 				B9B15FC1285D101C00097FDF /* ArtistDetailedViewController.swift in Sources */,
+				B90F604C29F07FD4007343F6 /* SpotifyScopeParams.swift in Sources */,
 				B94B41E528579AEA00F83A31 /* SpotifyScopeParamsBuilder.swift in Sources */,
 				B99CC0CF28D9F8D400B362BB /* SearchArtistsUseCase.swift in Sources */,
 			);
